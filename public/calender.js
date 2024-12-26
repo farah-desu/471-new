@@ -22,7 +22,7 @@ const months = [
     "December"
 ];
 
-// Mock dynamic data for study hours (replace with backend data as needed)
+// Mock dynamic data for study hours (for testing, will be overridden by backend data)
 let studyData = {
     "2024-12": { // Example for December 2024
         "17": 2,
@@ -39,6 +39,11 @@ let studyData = {
         "30": 9
     }
 };
+
+// Injected from the backend (replace the mock data if available)
+if (typeof backendStudyData !== "undefined") {
+    studyData = backendStudyData; // Use data passed from the backend
+}
 
 // Fixed gradient colors for specific study hours
 const colorMapping = [

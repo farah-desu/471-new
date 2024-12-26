@@ -80,7 +80,10 @@
                             </ul>
                             <ul class="calendar-dates"></ul>
                         </div>
-                    <script src="calender.js"></script>
+                    <script src="calender.js">    
+                        // Injected from the backend
+                        let studyData = @json($studyData);
+                    </script>
                     <div class="study-hours-legend">
                         <div class="legend-container">
                             <div class="legend-item">

@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CurrencyController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -10,6 +12,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/update-currency', [CurrencyController::class, 'updateCurrency']);
+
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -26,3 +33,8 @@ Route::get('/planner', function () {
 Route::get('/notes', function () {
     return view('notes');
 });
+
+
+
+
+

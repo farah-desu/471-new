@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            // Add the currency column
+            $table->integer('currency')->default(0); // Default to 0 currency
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

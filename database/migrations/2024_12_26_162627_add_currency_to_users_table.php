@@ -9,22 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('username')->unique(); // Add username field
-            $table->string('academic_credentials'); // Add academic_credentials field
+            $table->integer('currency')->default(0);
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    
+    public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['username', 'academic_credentials']);
+            $table->dropColumn('currency');
         });
     }
 };
-
