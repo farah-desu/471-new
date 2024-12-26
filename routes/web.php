@@ -18,3 +18,11 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/planner', function () {
+    return view('planner');
+});
+
+Route::get('/notes', function () {
+    return view('notes');
+});
